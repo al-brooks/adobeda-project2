@@ -2,6 +2,7 @@
 const express = require("express");
 const logger = require("morgan");
 const methodOverride = require("method-override");
+const indexRoutes = require("./routes/index");
 
 // init express
 const app = express();
@@ -18,6 +19,7 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 
 // mount routes
+app.use("/", indexRoutes);
 
 // catch all route - 404
 

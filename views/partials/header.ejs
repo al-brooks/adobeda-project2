@@ -1,11 +1,15 @@
 <header>
   <nav>
     <h1>Forum Site</h1>
+    <% if (user) { %>
     <select name="communities">
       <option value="anime">Anime</option> <!-- add anchor tag -->
       <option value="books">Books</option>
       <option value="food">Food</option>
     </select>
-    <p>User Profile</p>
+    <a href="/logout">LOG OUT</a>
+    <% } else { %>
+    <a href="/auth/google">LOG IN</a>
+    <% } %>
   </nav>
 </header>

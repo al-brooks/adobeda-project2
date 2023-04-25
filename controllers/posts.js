@@ -5,7 +5,7 @@ const Community = require("../models/community");
 
 // Get /posts/new
 function newPost(req, res) {
-  res.render("posts/new", { title: "Create Post" });
+  res.render("posts/new", { title: "Create Post", name: req.params.name });
 }
 
 // Post /posts
@@ -19,7 +19,11 @@ async function createPost(req, res) {
     await community.save();
 
     // redirect to community page
-    res.redirect("/");
+    if (req.params.name) {
+      res.redirect(`/c/${req.params.name}`);
+    } else {
+      res.redirect("/");
+    }
   } catch (err) {
     console.log(err);
   }

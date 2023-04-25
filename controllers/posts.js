@@ -10,9 +10,19 @@ function newPost(req, res) {
 
 // Post /posts
 async function createPost(req, res) {
-  // First we want to pull Community
-  console.log(req.body);
-  console.log(req.user);
+  try {
+    const { subject, content } = req.body;
+    const community = await Community.findOne({
+      community: req.body.community
+    });
+    community.posts.push({ subject, content, users: req.user });
+    await community.save();
+
+    // redirect to community page
+    res.direct("/");
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 module.exports = {

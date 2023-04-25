@@ -38,7 +38,7 @@ const postSchema = new Schema({
 const communitySchema = new Schema({
   community: {
     type: String,
-    enum: ["Anime", "Books", "Food"],
+    enum: ["anime", "books", "food"],
     required: true
   },
   posts: [postSchema]

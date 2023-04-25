@@ -7,6 +7,7 @@ const passport = require("passport");
 const methodOverride = require("method-override");
 const indexRoutes = require("./routes/index");
 const postRoutes = require("./routes/posts");
+const communityRoutes = require("./routes/communities");
 
 // init express
 const app = express();
@@ -38,8 +39,10 @@ app.use(function (req, res, next) {
 });
 
 // mount routes
+// add authentication middleware
 app.use("/", indexRoutes);
 app.use("/", postRoutes);
+app.use("/c", communityRoutes);
 
 // catch all route - 404
 

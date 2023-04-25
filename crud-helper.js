@@ -3,7 +3,7 @@ require("./config/database");
 
 const Community = require("./models/community");
 
-// const communities = ["Anime", "Books", "Food"];
+// const communities = ["anime", "books", "food"];
 // communities.forEach(c => {
 //   Community.create({ community: c });
 // });

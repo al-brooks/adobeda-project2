@@ -5,7 +5,13 @@
 <body>
   <%- include('./partials/header') %>
   <main>
-    <h2>List All Posts</h2>
+    <% if (user) { %>
+    <h2>Welcome User - We'll show you posts for all communities</h2>
+    <% } else { %>
+    <h2>Hey, thanks for coming. If you want to view our site click on the log in button</h2>
+    <a href="/auth/google">LOG IN</a>
+
+    <% } %>
   </main>
   <%- include('./partials/footer') %>
 

@@ -10,5 +10,5 @@ const Community = require("./models/community");
 
 Community.updateMany(
   {}, // update all
-  { posts: [] }
+  { posts: [], __v: 0 }
 ).then(console.log);

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <section class="detail-wrapper">
+      <p class="community">/c/<%= post.community %></p>
+      <div class="post-wrapper">
+        <section class="likes">10</section>
+        <section class="post-body">
+          <p class="subject"><%= post.subject %></p>
+          <p class="content"><%= post.content %></p>
+        </section>
+      </div>
+      <h3>Join the Conversation:</h3>
+      <form class="add-comment" action="">
+        <textarea name="comment" id="" cols="30" rows="10" placeholder="What do you think..."></textarea>
+        <button>Add</button>
+      </form>
+      <section class="comment-list">
+        List all comments - Make Divs (pic + username) - content - likes
+      </section>
+    </section>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+
+</html>

@@ -4,4 +4,6 @@ const postsCtrl = require("../controllers/posts");
 
 router.get("/posts/new", postsCtrl.new);
 
+router.post("/posts", postsCtrl.create);
+
 module.exports = router;

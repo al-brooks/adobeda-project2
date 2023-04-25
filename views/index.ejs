@@ -13,9 +13,9 @@
     </section>
     <section>
       <% posts.forEach(p => { %>
-      <div class="outer-wrapper">
-        <div class="likes">10</div>
-        <div class="post-body">
+      <section class="post-wrapper">
+        <section class="likes">10</section>
+        <section class="post-body">
           <p><%= p.subject %></p>
           <!-- only show first 20 words of content -->
           <p><%= p.content %></p>
@@ -24,8 +24,8 @@
           <form action="/c/<%= p.community %>/posts/<%= p._id %>">
             <button>Comments</button>
           </form>
-        </div>
-      </div>
+        </section>
+      </section>
       <% }) %>
     </section>
     <p>List of Posts</p>

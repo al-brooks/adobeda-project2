@@ -10,4 +10,6 @@ router.get("/c/:name/posts/new", postsCtrl.new);
 
 router.post("/c/:name/posts", postsCtrl.create);
 
+router.get("/c/:name/posts/:id", postsCtrl.show);
+
 module.exports = router;

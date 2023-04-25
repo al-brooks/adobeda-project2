@@ -7,6 +7,11 @@
   <main>
     <% if (user) { %>
     <h2>Welcome User - We'll show you posts for all communities</h2>
+    <section>
+      <p>Username</p>
+      <a href="/posts/new"><input type="text" placeholder="Create Post"></input></a>
+    </section>
+    <p>List of Posts</p>
     <% } else { %>
     <h2>Hey, thanks for coming. If you want to view our site click on the log in button</h2>
     <a href="/auth/google">LOG IN</a>

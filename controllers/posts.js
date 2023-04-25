@@ -34,7 +34,21 @@ async function createPost(req, res) {
   }
 }
 
+async function show(req, res) {
+  try {
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(post => (post._id = req.params.id));
+    res.render("posts/show", {
+      title: "Post Details",
+      post
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 module.exports = {
   new: newPost,
-  create: createPost
+  create: createPost,
+  show
 };

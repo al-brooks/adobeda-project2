@@ -19,7 +19,7 @@ async function createPost(req, res) {
     await community.save();
 
     // redirect to community page
-    res.direct("/");
+    res.redirect("/");
   } catch (err) {
     console.log(err);
   }

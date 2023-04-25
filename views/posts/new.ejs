@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <h2>Create a Post</h2>
+    <form action="/posts" method="POST">
+      <label>Community:
+        <select name="community">
+          <option value="Anime">Anime</option>
+          <option value="Books">Books</option>
+          <option value="Food">Food</option>
+        </select>
+      </label>
+      <label>Rules:
+        <p>Community Rules + Guidelines</p>
+      </label>
+      <label>Subject:
+        <input name="subject" type="text" placeholder="Subject / Title">
+      </label><br>
+      <label>Content:
+        <textarea name="content" id="" cols="30" rows="10"></textarea>
+      </label><br>
+      <button>Create Post</button>
+    </form>
+  </main>
+  <%- include('../partials/footer') %>
+
+</body>
+
+</html>

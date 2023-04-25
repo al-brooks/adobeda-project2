@@ -2,11 +2,11 @@
   <nav>
     <h1>Forum Site</h1>
     <% if (user) { %>
-    <select name="communities">
-      <option value="anime">Anime</option> <!-- add anchor tag -->
-      <option value="books">Books</option>
-      <option value="food">Food</option>
-    </select>
+    <ul>
+      <li><a href="/c/anime">Anime</a></li>
+      <li><a href="/c/books">Books</a></li>
+      <li><a href="/c/food">Food</a></li>
+    </ul>
     <a href="/logout">LOG OUT</a>
     <% } else { %>
     <a href="/auth/google">LOG IN</a>

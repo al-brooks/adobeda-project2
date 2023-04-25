@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head') %>
+<%- include('../partials/head') %>
 
 <body>
-  <%- include('./partials/header') %>
+  <%- include('../partials/header') %>
   <main>
     <% if (user) { %>
-    <h2>Welcome User - We'll show you posts for all communities</h2>
+    <h2><%= name %></h2>
     <section>
       <p>Username</p>
       <a href="/posts/new"><input type="text" placeholder="Create Post"></input></a>
@@ -35,7 +35,7 @@
 
     <% } %>
   </main>
-  <%- include('./partials/footer') %>
+  <%- include('../partials/footer') %>
 
 </body>
 

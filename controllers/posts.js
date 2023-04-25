@@ -15,7 +15,12 @@ async function createPost(req, res) {
     const community = await Community.findOne({
       community: req.body.community
     });
-    community.posts.push({ subject, content, users: req.user });
+    community.posts.push({
+      community: req.body.community,
+      subject,
+      content,
+      users: req.user
+    });
     await community.save();
 
     // redirect to community page

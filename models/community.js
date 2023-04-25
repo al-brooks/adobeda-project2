@@ -18,6 +18,10 @@ const commentSchema = new Schema({
 
 // likes = array of Users
 const postSchema = new Schema({
+  community: {
+    type: String,
+    required: true
+  },
   subject: {
     type: String,
     required: true

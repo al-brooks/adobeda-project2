@@ -4,6 +4,10 @@ const Schema = mongoose.Schema;
 
 // likes = array of Users
 const commentSchema = new Schema({
+  community: {
+    type: String,
+    required: true
+  },
   content: {
     type: String,
     required: true

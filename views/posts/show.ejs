@@ -15,8 +15,9 @@
         </section>
       </div>
       <h3>Join the Conversation:</h3>
-      <form class="add-comment" action="">
-        <textarea name="comment" id="" cols="30" rows="10" placeholder="What do you think..."></textarea>
+      <form class="add-comment" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
+        <input type="hidden" name="name" value="<%= post.community %>">
+        <textarea name="content" id="" cols="30" rows="10" placeholder="What do you think..."></textarea>
         <button>Add</button>
       </form>
       <section class="comment-list">

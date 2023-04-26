@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 const indexRoutes = require("./routes/index");
 const postRoutes = require("./routes/posts");
 const communityRoutes = require("./routes/communities");
+const commentRoutes = require("./routes/comments");
 
 // init express
 const app = express();
@@ -42,6 +43,7 @@ app.use(function (req, res, next) {
 // add authentication middleware
 app.use("/", indexRoutes);
 app.use("/", postRoutes);
+app.use("/", commentRoutes);
 app.use("/c", communityRoutes);
 
 // catch all route - 404

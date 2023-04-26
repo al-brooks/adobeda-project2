@@ -2,6 +2,7 @@
 // /
 
 const Community = require("../models/community");
+const User = require("../models/user");
 
 // Get /posts/new
 function newPost(req, res) {
@@ -38,9 +39,12 @@ async function show(req, res) {
   try {
     const community = await Community.findOne({ community: req.params.name });
     const post = community.posts.find(post => (post._id = req.params.id));
+    // also need the user who made post
+    const user = await User.findOne({ _id: post.users });
     res.render("posts/show", {
       title: "Post Details",
-      post
+      post,
+      user
     });
   } catch (err) {
     console.log(err);

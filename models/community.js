@@ -2,7 +2,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// likes = array of Users
 const commentSchema = new Schema({
   community: {
     type: String,
@@ -20,7 +19,6 @@ const commentSchema = new Schema({
   ]
 });
 
-// likes = array of Users
 const postSchema = new Schema({
   community: {
     type: String,

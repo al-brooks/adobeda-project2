@@ -37,14 +37,26 @@ async function createPost(req, res) {
 
 async function show(req, res) {
   try {
-    const community = await Community.findOne({ community: req.params.name });
+    const community = await Community.findOne({
+      community: req.params.name
+    }).populate({
+      path: "posts",
+      populate: {
+        path: "users",
+        model: "User"
+      }
+    });
+
     const post = community.posts.find(post => (post._id = req.params.id));
-    // also need the user who made post
-    const user = await User.findOne({ _id: post.users });
+    console.log(post);
+    console.log(post.comments);
+    console.log(post.comments.users);
+    // const postUser = users.find(u => (u._id = post.users));
+
     res.render("posts/show", {
       title: "Post Details",
       post,
-      user
+      user: post.users[0]
     });
   } catch (err) {
     console.log(err);

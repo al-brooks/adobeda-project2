@@ -28,9 +28,13 @@
       <a href="/logout">LOG OUT</a>
     </section>
     <% } else { %>
-    <section>
+    <section id="site-links" class="flex">
+      <a href="/">
+        <img src="/imgs/younity_logo.png" alt="YOUnity Logo" id="logo">
+      </a>
       <a href="/auth/google">LOG IN</a>
     </section>
+
     <% } %>
   </nav>
 </header>

@@ -26,6 +26,7 @@ a {
 
 header {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 header > nav {
@@ -56,12 +57,11 @@ footer {
 
 .dropdown > button,
 .dropdown-choices button {
-  font-size: 1.3rem;
+  font-size: 1rem;
   text-align: start;
   cursor: pointer;
   height: 3.3rem;
-  width: 15rem;
-  margin: 0 1rem;
+  width: 8rem;
   padding-left: 1rem;
 }
 
@@ -84,12 +84,26 @@ footer {
   display: flex;
 }
 
-#logo {
+.user-links {
+  align-items: center;
+}
+
+#logo,
+#nav-img {
   display: block;
   height: 3.5rem;
   border-radius: 8px;
+  margin-right: 1rem;
 }
 
 #site-links {
   align-items: flex-end;
+}
+
+@media (min-width: 600px) {
+  .dropdown > button,
+  .dropdown-choices button {
+    font-size: 1.3rem;
+    width: 15rem;
+  }
 }

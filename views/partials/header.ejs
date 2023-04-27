@@ -21,8 +21,10 @@
       </section>
     </section>
 
-    <section>
-      <a href="/user/profile">PROFILE</a>
+    <section class="flex user-links">
+      <a href="/user/profile">
+        <img id="nav-img" src="<%= user.avatar %>" alt="User Avatar">
+      </a>
       <a href="/logout">LOG OUT</a>
     </section>
     <% } else { %>

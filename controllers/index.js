@@ -6,7 +6,7 @@ async function home(req, res) {
   communities.forEach(c => {
     posts.push(...c.posts);
   });
-  res.render("index", { title: "Forum Site Homepage", posts });
+  res.render("index", { title: "Forum Site Homepage", posts, user: req.user });
 }
 
 module.exports = {

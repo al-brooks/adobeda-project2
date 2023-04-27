@@ -10,7 +10,7 @@ async function createComment(req, res) {
     post.comments.push({
       community: req.body.name,
       content: req.body.content,
-      users: req.user
+      users: req.user._id
     });
 
     await community.save();

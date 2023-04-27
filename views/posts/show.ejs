@@ -7,8 +7,8 @@
   <main>
     <section class="detail-wrapper">
       <div class="user-info">
-        <img class="user-avatar" src="<%= user.avatar %>" alt="user avatar">
-        <p class="user-name"><%= user.name %></p>
+        <img class="user-avatar" src="<%= post.users[0].avatar %>" alt="user avatar">
+        <p class="user-name"><%= post.users[0].name %></p>
       </div>
       <p class="community">/c/<%= post.community %></p>
       <div class="post-wrapper">
@@ -26,12 +26,16 @@
       </form>
       <section class="comment-list">
         <!-- List all comments - Make Divs (pic + username) - content - likes -->
-        <% post.comments.forEach(c => { %>
+        <% if (comments.length > 0) { %>
+        <% comments.forEach(c => { %>
         <div>
-          <p>Username</p>
+          <img src="<%= c.users[0].avatar %>" alt="">
+          <p><%= c.users[0].name %></p>
           <p><%= c.content %></p>
         </div>
         <% }) %>
+        <% } %>
+
       </section>
     </section>
   </main>

@@ -20,8 +20,9 @@ async function createPost(req, res) {
       community: req.body.community,
       subject,
       content,
-      users: req.user
+      users: req.user._id
     });
+
     await community.save();
 
     // redirect to community page
@@ -41,22 +42,24 @@ async function show(req, res) {
       community: req.params.name
     }).populate({
       path: "posts",
-      populate: {
-        path: "users",
-        model: "User"
-      }
+      populate: [
+        {
+          path: "users"
+        },
+        {
+          path: "comments",
+          populate: {
+            path: "users"
+          }
+        }
+      ]
     });
-
     const post = community.posts.find(post => (post._id = req.params.id));
-    console.log(post);
-    console.log(post.comments);
-    console.log(post.comments.users);
-    // const postUser = users.find(u => (u._id = post.users));
 
     res.render("posts/show", {
       title: "Post Details",
       post,
-      user: post.users[0]
+      comments: [...post.comments]
     });
   } catch (err) {
     console.log(err);

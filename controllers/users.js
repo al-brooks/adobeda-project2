@@ -27,7 +27,12 @@ async function show(req, res) {
       break;
     }
   }
-  res.render("users/index", { title: "Profile Page", posts, comments });
+  res.render("users/index", {
+    title: "Profile Page",
+    user: req.user,
+    posts,
+    comments
+  });
 }
 
 module.exports = {

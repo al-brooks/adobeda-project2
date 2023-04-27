@@ -94,7 +94,23 @@ async function editPost(req, res) {
   }
 }
 
-async function updatePost(req, res) {}
+async function updatePost(req, res) {
+  try {
+    const { subject, content } = req.body;
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.id;
+    });
+
+    post.subject = subject;
+    post.content = content;
+
+    await community.save();
+    res.redirect(`/user/profile`);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 module.exports = {
   new: newPost,

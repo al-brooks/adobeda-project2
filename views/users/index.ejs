@@ -18,7 +18,9 @@
       <div>
         <p><%= p.subject %></p>
         <p><%= p.content %></p>
-        <button>edit</button>
+        <form action="/c/<%= p.community %>/posts/<%= p._id %>/edit">
+          <button>edit</button>
+        </form>
         <form action="/c/<%= p.community %>/posts/<%= p._id %>?_method=DELETE" method="POST">
           <button>delete</button>
         </form>

@@ -82,8 +82,16 @@ async function deletePost(req, res) {
   }
 }
 
-function editPost(req, res) {
-  res.render("posts/edit", { title: "Edit Post" });
+async function editPost(req, res) {
+  try {
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.id;
+    });
+    res.render("posts/edit", { title: "Edit Post", post });
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 async function updatePost(req, res) {}

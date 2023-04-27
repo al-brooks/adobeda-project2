@@ -1,6 +1,3 @@
-// /c/books
-// /
-
 const Community = require("../models/community");
 
 // Get /posts/new
@@ -85,9 +82,17 @@ async function deletePost(req, res) {
   }
 }
 
+function editPost(req, res) {
+  res.render("posts/edit", { title: "Edit Post" });
+}
+
+async function updatePost(req, res) {}
+
 module.exports = {
   new: newPost,
   create: createPost,
   show,
-  delete: deletePost
+  delete: deletePost,
+  edit: editPost,
+  update: updatePost
 };

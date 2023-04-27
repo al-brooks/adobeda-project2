@@ -1,5 +1,6 @@
 // require dependencies
 const express = require("express");
+const cors = require("cors");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -21,6 +22,7 @@ require("./config/database");
 require("./config/passport");
 
 // mount middleware
+app.use(cors());
 app.use(logger("dev"));
 app.use(cookieParser());
 app.use(express.static("public"));
@@ -49,8 +51,8 @@ app.use("/c", communityRoutes);
 app.use("/user", userRoutes);
 
 // catch all route - 404
-app.use('*', (req,res) => {
-  res.render('404', {title: '404 - Page Not Found'})
+app.use("*", (req, res) => {
+  res.render("404", { title: "404 - Page Not Found" });
 });
 
 // listen for requests

@@ -7,14 +7,21 @@
   <main>
     <% if (user) { %>
     <h2>Welcome User - We'll show you posts for all communities</h2>
-    <section>
-      <p>Username</p>
-      <a href="/posts/new"><input type="text" placeholder="Create Post"></input></a>
+    <section class="flex create-post-section">
+      <a href="/user/profile">
+        <img class="user-img" src="<%= user.avatar %>" alt="User Avatar">
+      </a>
+      <a class="create-post-wrapper" href="/posts/new">
+        <input class="create-post" type="text" placeholder="Create Post"></input>
+      </a>
     </section>
     <section>
       <% posts.forEach(p => { %>
-      <section class="post-wrapper">
-        <section class="likes">10</section>
+      <section class="flex post-wrapper">
+        <section class="flex likes">
+          <p>+</p>
+          <p>10</p>
+        </section>
         <section class="post-body">
           <p><%= p.subject %></p>
           <!-- only show first 20 words of content -->
@@ -28,7 +35,6 @@
       </section>
       <% }) %>
     </section>
-    <p>List of Posts</p>
     <% } else { %>
     <h2>Hey, thanks for coming. If you want to view our site click on the log in button</h2>
     <a href="/auth/google">LOG IN</a>

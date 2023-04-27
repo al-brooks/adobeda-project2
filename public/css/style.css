@@ -1,0 +1,165 @@
+:root {
+  --first: #fffcf2;
+  --second: #ccc5b9;
+  --third: #252422;
+  --fourth: #0d0d0c;
+  --fifth: #eb5e28;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  color: var(--first);
+  background: var(--fourth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  border-bottom: 0.25px solid var(--second);
+  background-color: var(--third);
+}
+
+header > nav {
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > nav > ul {
+  list-style: none;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > section {
+  border: thin solid var(--second);
+  border-radius: 5px;
+  width: 50%;
+  margin: 0.5rem 0;
+  padding: 0.8rem 1rem;
+  background-color: var(--third);
+}
+
+footer {
+  margin-bottom: 2rem;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+/* .dropdown > button {
+  height: 3.5rem;
+} */
+
+.dropdown > button,
+.dropdown-choices button {
+  color: inherit;
+  background-color: var(--third);
+  border: none;
+  font-size: 1rem;
+  text-align: start;
+  cursor: pointer;
+  height: 3.3rem;
+  width: 8rem;
+  padding-left: 1rem;
+}
+
+.dropdown > button:hover {
+  border: 0.25px solid var(--first);
+}
+
+.dropdown-choices {
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-choices {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-choices button {
+  display: block;
+}
+
+.dropdown-choices button:hover {
+  border: 0.25px solid var(--first);
+}
+
+.flex {
+  display: flex;
+}
+
+.user-links {
+  align-items: center;
+}
+
+.create-post-wrapper {
+  width: 90%;
+}
+.create-post {
+  height: 3.5rem;
+  width: 100%;
+}
+
+.likes {
+  flex-direction: column;
+  align-items: center;
+}
+
+.like > p {
+  text-align: center;
+  margin: 0;
+}
+
+.post-body {
+  padding-left: 1rem;
+}
+
+#logo,
+.user-img {
+  display: block;
+  height: 3.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+#site-links {
+  align-items: flex-end;
+}
+
+@media (min-width: 600px) {
+  .dropdown > button,
+  .dropdown-choices button {
+    font-size: 1.3rem;
+    width: 15rem;
+  }
+}

@@ -1,16 +1,36 @@
 <header>
-  <nav>
-    <h1><a href="/">Forum Site</a></h1>
+  <nav class="flex">
     <% if (user) { %>
-    <ul>
-      <li><a href="/c/anime">Anime</a></li>
-      <li><a href="/c/books">Books</a></li>
-      <li><a href="/c/food">Food</a></li>
-    </ul>
-    <a href="/user/profile">PROFILE</a>
-    <a href="/logout">LOG OUT</a>
+    <section id="site-links" class="flex">
+      <a href="/">
+        <img src="/imgs/younity_logo.png" alt="YOUnity Logo" id="logo">
+      </a>
+      <section class="dropdown">
+        <button>Communities</button>
+        <section class="dropdown-choices">
+          <form action="/c/anime">
+            <button>Anime</button>
+          </form>
+          <form action="/c/books">
+            <button>Books</button>
+          </form>
+          <form action="/c/food">
+            <button>Food</button>
+          </form>
+        </section>
+      </section>
+    </section>
+
+    <section class="flex user-links">
+      <a href="/user/profile">
+        <img class="user-img" src="<%= user.avatar %>" alt="User Avatar">
+      </a>
+      <a href="/logout">LOG OUT</a>
+    </section>
     <% } else { %>
-    <a href="/auth/google">LOG IN</a>
+    <section>
+      <a href="/auth/google">LOG IN</a>
+    </section>
     <% } %>
   </nav>
 </header>

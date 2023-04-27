@@ -67,8 +67,26 @@ async function show(req, res) {
   }
 }
 
+async function deletePost(req, res) {
+  try {
+    const community = await Community.findOne({
+      community: req.params.name
+    });
+    const postIdx = community.posts.findIndex(function (post) {
+      return post._id.toString() === req.params.id;
+    });
+
+    community.posts.splice(postIdx, 1);
+    await community.save();
+    res.redirect(`/c/${req.params.name}`);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 module.exports = {
   new: newPost,
   create: createPost,
-  show
+  show,
+  delete: deletePost
 };

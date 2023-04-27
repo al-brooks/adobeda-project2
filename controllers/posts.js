@@ -19,8 +19,9 @@ async function createPost(req, res) {
       community: req.body.community,
       subject,
       content,
-      users: req.user
+      users: req.user._id
     });
+
     await community.save();
 
     // redirect to community page
@@ -36,12 +37,49 @@ async function createPost(req, res) {
 
 async function show(req, res) {
   try {
-    const community = await Community.findOne({ community: req.params.name });
-    const post = community.posts.find(post => (post._id = req.params.id));
+    const community = await Community.findOne({
+      community: req.params.name
+    }).populate({
+      path: "posts",
+      populate: [
+        {
+          path: "users"
+        },
+        {
+          path: "comments",
+          populate: {
+            path: "users"
+          }
+        }
+      ]
+    });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.id;
+    });
+
     res.render("posts/show", {
       title: "Post Details",
-      post
+      user: req.user,
+      post,
+      comments: [...post.comments]
     });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function deletePost(req, res) {
+  try {
+    const community = await Community.findOne({
+      community: req.params.name
+    });
+    const postIdx = community.posts.findIndex(function (post) {
+      return post._id.toString() === req.params.id;
+    });
+
+    community.posts.splice(postIdx, 1);
+    await community.save();
+    res.redirect(`/c/${req.params.name}`);
   } catch (err) {
     console.log(err);
   }
@@ -50,5 +88,6 @@ async function show(req, res) {
 module.exports = {
   new: newPost,
   create: createPost,
-  show
+  show,
+  delete: deletePost
 };

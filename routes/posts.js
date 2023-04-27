@@ -12,4 +12,6 @@ router.post("/c/:name/posts", postsCtrl.create);
 
 router.get("/c/:name/posts/:id", postsCtrl.show);
 
+router.delete("/c/:name/posts/:id", postsCtrl.delete);
+
 module.exports = router;

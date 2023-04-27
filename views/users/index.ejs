@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+</head>
+
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <section>
+      <img src="<%= user.avatar %>" alt="">
+      <p><%= user.name %></p>
+      <p><%= user.email %></p>
+    </section>
+    <section>
+      <h2>POSTS</h2>
+      <% if (posts.length) { %>
+      <% posts.forEach(p => { %>
+      <div>
+        <p><%= p.subject %></p>
+        <p><%= p.content %></p>
+        <button>edit</button>
+        <form action="/c/<%= p.community %>/posts/<%= p._id %>?_method=DELETE" method="POST">
+          <button>delete</button>
+        </form>
+      </div>
+      <% }) %>
+      <% } else { %>
+      <p>No Posts Yet!</p>
+      <% } %>
+    </section>
+    <section>
+      <h2>COMMENTS</h2>
+      <% if (comments.length) { %>
+      <% comments.forEach(c => { %>
+      <div>
+        <p><%= c.content %></p>
+        <button>edit</button>
+        <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+          <button>delete</button>
+        </form>
+      </div>
+      <% }) %>
+      <% } else { %>
+      <p>No Comments Yet!</p>
+      <% } %>
+    </section>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+
+</html>

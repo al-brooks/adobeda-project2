@@ -1,12 +1,13 @@
 <header>
   <nav>
-    <h1>Forum Site</h1>
+    <h1><a href="/">Forum Site</a></h1>
     <% if (user) { %>
     <ul>
       <li><a href="/c/anime">Anime</a></li>
       <li><a href="/c/books">Books</a></li>
       <li><a href="/c/food">Food</a></li>
     </ul>
+    <a href="/user/profile">PROFILE</a>
     <a href="/logout">LOG OUT</a>
     <% } else { %>
     <a href="/auth/google">LOG IN</a>

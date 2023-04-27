@@ -46,6 +46,17 @@ header > nav > ul {
 
 main {
   flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > section {
+  border: 2px solid white;
+  width: 70%;
+  margin: 0.5rem 0;
+  padding: 0.8rem 1.5rem;
 }
 
 footer {
@@ -105,8 +116,16 @@ footer {
   align-items: center;
 }
 
+.create-post-wrapper {
+  width: 90%;
+}
+.create-post {
+  height: 3.5rem;
+  width: 80%;
+}
+
 #logo,
-#nav-img {
+.user-img {
   display: block;
   height: 3.5rem;
   border-radius: 8px;

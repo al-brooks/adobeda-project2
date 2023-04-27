@@ -7,9 +7,13 @@
   <main>
     <% if (user) { %>
     <h2>Welcome User - We'll show you posts for all communities</h2>
-    <section>
-      <p>Username</p>
-      <a href="/posts/new"><input type="text" placeholder="Create Post"></input></a>
+    <section class="flex">
+      <a href="/user/profile">
+        <img class="user-img" src="<%= user.avatar %>" alt="User Avatar">
+      </a>
+      <a class="create-post-wrapper" href="/posts/new">
+        <input class="create-post" type="text" placeholder="Create Post"></input>
+      </a>
     </section>
     <section>
       <% posts.forEach(p => { %>

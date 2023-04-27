@@ -1,28 +1,34 @@
 <header>
   <nav class="flex">
     <% if (user) { %>
-    <div>
+    <section id="site-links" class="flex">
       <a href="/">
         <img src="/imgs/younity_logo.jpg" alt="YOUnity Logo" id="logo">
       </a>
-      <div class="dropdown">
+      <section class="dropdown">
         <button>Communities</button>
-        <div class="dropdown-choices">
-          <a href="/c/anime">Anime</a>
-          <a href="/c/books">Books</a>
-          <a href="/c/food">Food</a>
-        </div>
-      </div>
-    </div>
+        <section class="dropdown-choices">
+          <form action="/c/anime">
+            <button>Anime</button>
+          </form>
+          <form action="/c/books">
+            <button>Books</button>
+          </form>
+          <form action="/c/food">
+            <button>Food</button>
+          </form>
+        </section>
+      </section>
+    </section>
 
-    <div>
+    <section>
       <a href="/user/profile">PROFILE</a>
       <a href="/logout">LOG OUT</a>
-    </div>
+    </section>
     <% } else { %>
-    <div>
+    <section>
       <a href="/auth/google">LOG IN</a>
-    </div>
+    </section>
     <% } %>
   </nav>
 </header>

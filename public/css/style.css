@@ -26,6 +26,10 @@ a {
   color: inherit;
 }
 
+p {
+  margin: 0;
+}
+
 header {
   width: 100%;
   margin-top: 0;
@@ -53,10 +57,12 @@ main {
 }
 
 main > section {
-  border: 2px solid white;
-  width: 70%;
+  border: thin solid var(--second);
+  border-radius: 5px;
+  width: 60%;
   margin: 0.5rem 0;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1rem;
+  background-color: var(--third);
 }
 
 footer {
@@ -121,7 +127,21 @@ footer {
 }
 .create-post {
   height: 3.5rem;
-  width: 80%;
+  width: 100%;
+}
+
+.likes {
+  flex-direction: column;
+  align-items: center;
+}
+
+.like > p {
+  text-align: center;
+  margin: 0;
+}
+
+.post-body {
+  padding-left: 1rem;
 }
 
 #logo,

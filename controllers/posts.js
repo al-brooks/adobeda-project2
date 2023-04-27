@@ -2,7 +2,6 @@
 // /
 
 const Community = require("../models/community");
-const User = require("../models/user");
 
 // Get /posts/new
 function newPost(req, res) {
@@ -54,7 +53,9 @@ async function show(req, res) {
         }
       ]
     });
-    const post = community.posts.find(post => (post._id = req.params.id));
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.id;
+    });
 
     res.render("posts/show", {
       title: "Post Details",

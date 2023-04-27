@@ -6,27 +6,29 @@ async function show(req, res) {
   const communities = await Community.find({});
   const posts = [];
   const comments = [];
+
   for (const c of communities) {
     if (c.posts.length) {
-      let filteredArr = [...c.posts].filter(
-        p => p.users[0].toString() === req.user.id
-      );
+      let filteredArr = [...c.posts].filter(function (p) {
+        return p.users[0].toString() === req.user.id;
+      });
       posts.push(...filteredArr);
     } else {
-      break;
+      continue;
     }
   }
 
   for (const p of posts) {
     if (p.comments.length) {
-      let filteredArr = [...p.comments].filter(
-        c => c.users[0].toString() === req.user.id
-      );
+      let filteredArr = [...p.comments].filter(function (c) {
+        return c.users[0].toString() === req.user.id;
+      });
       comments.push(...filteredArr);
     } else {
-      break;
+      continue;
     }
   }
+
   res.render("users/index", {
     title: "Profile Page",
     user: req.user,

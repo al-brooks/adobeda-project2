@@ -11,6 +11,12 @@ const commentSchema = new Schema({
     type: String,
     required: true
   },
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Community"
+    }
+  ],
   users: [
     {
       type: Schema.Types.ObjectId,

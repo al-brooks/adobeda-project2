@@ -59,6 +59,7 @@ async function show(req, res) {
 
     res.render("posts/show", {
       title: "Post Details",
+      user: req.user,
       post,
       comments: [...post.comments]
     });

@@ -1,8 +1,8 @@
 :root {
   --first: #fffcf2;
   --second: #ccc5b9;
-  --third: #403d39;
-  --fourth: #252422;
+  --third: #252422;
+  --fourth: #0d0d0c;
   --fifth: #eb5e28;
 }
 
@@ -11,8 +11,10 @@
 }
 
 body {
-  /* color: var(--first);
-  background: var(--fourth); */
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  color: var(--first);
+  background: var(--fourth);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +28,11 @@ a {
 
 header {
   width: 100%;
+  margin-top: 0;
   margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  border-bottom: 0.25px solid var(--second);
+  background-color: var(--third);
 }
 
 header > nav {
@@ -57,12 +63,19 @@ footer {
 
 .dropdown > button,
 .dropdown-choices button {
+  color: inherit;
+  background-color: var(--third);
+  border: none;
   font-size: 1rem;
   text-align: start;
   cursor: pointer;
   height: 3.3rem;
   width: 8rem;
   padding-left: 1rem;
+}
+
+.dropdown > button:hover {
+  border: 0.25px solid var(--first);
 }
 
 .dropdown-choices {
@@ -78,6 +91,10 @@ footer {
 
 .dropdown-choices button {
   display: block;
+}
+
+.dropdown-choices button:hover {
+  border: 0.25px solid var(--first);
 }
 
 .flex {

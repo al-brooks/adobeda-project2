@@ -37,6 +37,11 @@
           <img src="<%= c.users[0].avatar %>" alt="">
           <p><%= c.users[0].name %></p>
           <p><%= c.content %></p>
+          <% if (user.id === c.users[0].id) { %>
+          <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+            <button>delete</button>
+          </form>
+          <% } %>
         </div>
         <% }) %>
         <% } %>

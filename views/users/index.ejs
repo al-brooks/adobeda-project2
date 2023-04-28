@@ -18,6 +18,7 @@
       <div>
         <p><%= p.subject %></p>
         <p><%= p.content %></p>
+        <a href="/c/<%= p.community %>/posts/<%= p._id %>">see post details...</a>
         <form action="/c/<%= p.community %>/posts/<%= p._id %>/edit">
           <button>edit</button>
         </form>
@@ -36,6 +37,7 @@
       <% comments.forEach(c => { %>
       <div>
         <p><%= c.content %></p>
+        <a href="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>">see post details...</a>
         <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>/edit">
           <button>edit</button>
         </form>

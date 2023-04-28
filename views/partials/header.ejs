@@ -6,7 +6,8 @@
         <img src="/imgs/younity_logo.png" alt="YOUnity Logo" id="logo">
       </a>
       <section class="dropdown">
-        <button>Communities</button>
+        <button class="flex dropdownBtn">
+          <span>Communities</span> <span>&or;</span></button>
         <section class="dropdown-choices">
           <form action="/c/anime">
             <button>Anime</button>
@@ -28,9 +29,15 @@
       <a href="/logout">LOG OUT</a>
     </section>
     <% } else { %>
+<<<<<<< HEAD
     <section id="site-links" class="flex">
       <a href="/">
         <img src="/imgs/younity_logo.png" alt="YOUnity Logo" id="logo">
+=======
+    <section class="user-links" class="flex">
+      <a href="/">
+        <img src="/imgs/younity_logo.png" alt="YOUnity Logo" id="landing-logo">
+>>>>>>> development
       </a>
       <a href="/auth/google">LOG IN</a>
     </section>

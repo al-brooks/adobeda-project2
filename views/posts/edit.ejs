@@ -6,6 +6,7 @@
   <%- include('../partials/header') %>
   <main>
     <h2>Edit Post</h2>
+<<<<<<< HEAD
     <% let action = name ? `/c/${name}/posts` : '/posts' %>
     <form action="<%= action %>" method="POST">
       <label>Community:
@@ -31,6 +32,22 @@
         <textarea name="content" id="" cols="30" rows="10"></textarea>
       </label><br>
       <button>Submit Changes</button>
+=======
+    <form class="new-form" action="/c/<%= post.community %>/posts/<%= post._id %>?_method=PUT" method="POST">
+      <label>Community:
+        <select class="new-form-select" name="community">
+          <option value="<%= post.community %>" selected>
+            <%= post.community %></option>
+        </select>
+      </label>
+      <label>Subject:
+        <input class="new-form-input" name="subject" type="text" placeholder="<%= post.subject %>">
+      </label>
+      <label>Content:
+        <textarea class="new-form-text" name="content" id="" cols="30" rows="10" placeholder="<%= post.content %>"></textarea>
+      </label>
+      <button class="submit-btn">Submit Changes</button>
+>>>>>>> development
     </form>
   </main>
   <%- include('../partials/footer') %>

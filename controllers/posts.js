@@ -28,7 +28,8 @@ async function createPost(req, res) {
       res.redirect("/");
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 
@@ -61,7 +62,8 @@ async function show(req, res) {
       comments: [...post.comments]
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 
@@ -78,7 +80,40 @@ async function deletePost(req, res) {
     await community.save();
     res.redirect(`/c/${req.params.name}`);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
+  }
+}
+
+async function editPost(req, res) {
+  try {
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.id;
+    });
+    res.render("posts/edit", { title: "Edit Post", post });
+  } catch (err) {
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
+  }
+}
+
+async function updatePost(req, res) {
+  try {
+    const { subject, content } = req.body;
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.id;
+    });
+
+    post.subject = subject;
+    post.content = content;
+
+    await community.save();
+    res.redirect(`/c/${req.params.name}/posts/${req.params.id}`);
+  } catch (err) {
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 

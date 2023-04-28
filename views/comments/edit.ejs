@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <h3>Edit Comment:</h3>
+    <form class="new-form" action="/c/<%= comment.community %>/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+      <input type="hidden" name="name" value="<%= comment.community %>">
+      <textarea class="new-form-text" name="content" cols="30" rows="10" placeholder="<%= comment.content %>"></textarea>
+      <button class="submit-btn">Submit Changes</button>
+    </form>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+
+</html>

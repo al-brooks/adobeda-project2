@@ -5,35 +5,33 @@
 <body>
   <%- include('../partials/header') %>
   <main>
-    <% if (user) { %>
-    <h2><%= name %></h2>
-    <section>
-      <p>Username</p>
-      <a href="/c/<%= name %>/posts/new"><input type="text" placeholder="Create Post"></input></a>
+    <h2>c/<%= name %></h2>
+    <section class="flex create-post-section">
+      <a href="/user/profile">
+        <img referrerpolicy="no-referrer" class="user-img" src="<%= user.avatar %>" alt="User Avatar">
+      </a>
+      <a class="create-post-wrapper" href="/posts/new">
+        <input class="create-post" type="text" placeholder="Create Post"></input>
+      </a>
     </section>
     <section>
       <% posts.forEach(p => { %>
-      <div class="outer-wrapper">
-        <div class="likes">10</div>
-        <div class="post-body">
-          <p><%= p.subject %></p>
-          <!-- only show first 20 words of content -->
-          <p><%= p.content %></p>
-          <br>
-          <span><a href="/c/<%= p.community %>/posts/<%= p._id %>">read more</a></span>
+      <section class="flex post-wrapper">
+        <section class="flex likes">
+        </section>
+        <section class="post-body">
+          <p class="community-name">c/<%= p.community %></p>
+          <p>posted by <%= user.name %> on <%= p.createdAt.toLocaleDateString() %></p>
+          <p class="post-subject"><%= p.subject %></p>
+          <p class="post-content"><%= p.content %></p>
+          <a href="/c/<%= p.community %>/posts/<%= p._id %>">read more...</a>
           <form action="/c/<%= p.community %>/posts/<%= p._id %>">
-            <button>Comments</button>
+            <button class="submit-btn"><%= p.comments.length %> Comments</button>
           </form>
-        </div>
-      </div>
+        </section>
+      </section>
       <% }) %>
     </section>
-    <p>List of Posts</p>
-    <% } else { %>
-    <h2>Hey, thanks for coming. If you want to view our site click on the log in button</h2>
-    <a href="/auth/google">LOG IN</a>
-
-    <% } %>
   </main>
   <%- include('../partials/footer') %>
 

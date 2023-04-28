@@ -5,48 +5,72 @@
 <body>
   <%- include('../partials/header') %>
   <main>
+<<<<<<< HEAD
     <section class="detail-wrapper">
       <div class="user-info">
         <img referrerpolicy="no-referrer" class="user-avatar" src="<%= post.users[0].avatar %>" alt="user avatar">
+=======
+    <section class="post-wrapper">
+      <section class="flex user-info">
+        <img referrerpolicy="no-referrer" class="user-img" src="<%= post.users[0].avatar %>" alt="user avatar">
+>>>>>>> development
         <p class="user-name"><%= post.users[0].name %></p>
-      </div>
-      <p class="community">/c/<%= post.community %></p>
-      <div class="post-wrapper">
-        <section class="likes">10</section>
+      </section>
+      <section class="post-wrapper">
+        <section class="likes"></section>
         <section class="post-body">
-          <p class="subject"><%= post.subject %></p>
-          <p class="content"><%= post.content %></p>
+          <p class="community-name">/c/<%= post.community %></p>
+          <p class="post-subject"><%= post.subject %></p>
+          <p class="post-content"><%= post.content %></p>
         </section>
         <% if (user.id === post.users[0].id) { %>
-        <form action="/c/<%= post.community %>/posts/<%= post._id %>?_method=DELETE" method="POST">
-          <button>delete</button>
-        </form>
-        <% } %>
-      </div>
-      <h3>Join the Conversation:</h3>
-      <form class="add-comment" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
-        <input type="hidden" name="name" value="<%= post.community %>">
-        <textarea name="content" id="" cols="30" rows="10" placeholder="What do you think..."></textarea>
-        <button>Add</button>
-      </form>
-      <section class="comment-list">
-        <!-- List all comments - Make Divs (pic + username) - content - likes -->
-        <% if (comments.length > 0) { %>
-        <% comments.forEach(c => { %>
-        <div>
-          <img src="<%= c.users[0].avatar %>" alt="">
-          <p><%= c.users[0].name %></p>
-          <p><%= c.content %></p>
-          <% if (user.id === c.users[0].id) { %>
-          <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
-            <button>delete</button>
+        <section class="post-btns flex">
+          <form action="/c/<%= post.community %>/posts/<%= post._id %>/edit">
+            <button class="submit-btn">edit</button>
           </form>
-          <% } %>
-        </div>
-        <% }) %>
+          <form action="/c/<%= post.community %>/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <button class="submit-btn">delete</button>
+          </form>
+        </section>
         <% } %>
-
       </section>
+      <section class="new-comment">
+        <h3>Join the Conversation:</h3>
+        <form class="new-form" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
+          <input type="hidden" name="name" value="<%= post.community %>">
+          <textarea class="new-form-text" name="content" cols="30" rows="10" placeholder="What do you think..."></textarea>
+          <button class="submit-btn">Create Comment</button>
+        </form>
+      </section>
+      <h3>Comments: <%= post.comments.length %></h3>
+      <% if (comments.length) { %>
+      <% comments.forEach(c => { %>
+      <section class="post-wrapper">
+        <section class="comment">
+          <section class="flex user-info">
+            <img referrerpolicy="no-referrer" class="user-img" src="<%= c.users[0].avatar %>" alt="">
+            <p class="user-name"><%= c.users[0].name %></p>
+          </section>
+          <section>
+            <p class="post-content"><%= c.content %></p>
+          </section>
+        </section>
+        <% if (user.id === c.users[0].id) { %>
+        <section class="post-btns flex">
+          <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>/edit">
+            <button class="submit-btn">edit</button>
+          </form>
+          <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+            <button class="submit-btn">delete</button>
+          </form>
+        </section>
+        <% } %>
+      </section>
+
+      <% }) %>
+
+      <% } %>
+
     </section>
   </main>
   <%- include('../partials/footer') %>

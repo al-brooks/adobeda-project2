@@ -20,7 +20,8 @@ async function createComment(req, res) {
     await community.save();
     res.redirect(`/c/${req.body.name}/posts/${req.params.id}`);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 
@@ -41,11 +42,51 @@ async function deleteComment(req, res) {
     await community.save();
     res.redirect(`/c/${req.params.name}/posts/${req.params.pid}`);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
+  }
+}
+
+async function editComment(req, res) {
+  try {
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.pid;
+    });
+    const comment = post.comments.find(function (c) {
+      return c._id.toString() === req.params.cid;
+    });
+
+    res.render("comments/edit", { title: "Edit Post", post, comment });
+  } catch (err) {
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
+  }
+}
+
+async function updateComment(req, res) {
+  try {
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.pid;
+    });
+    const comment = post.comments.find(function (c) {
+      return c._id.toString() === req.params.cid;
+    });
+
+    comment.content = req.body.content;
+
+    await community.save();
+    res.redirect(`/c/${req.body.name}/posts/${req.params.pid}`);
+  } catch (err) {
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 
 module.exports = {
   create: createComment,
-  delete: deleteComment
+  delete: deleteComment,
+  edit: editComment,
+  update: updateComment
 };

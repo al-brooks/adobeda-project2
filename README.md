@@ -5,12 +5,12 @@
 
 Project Link: [https://younity.herokuapp.com/)
 
-About YOUnity:
+## About YOUnity:
 
 YOUnity is where the conversation happens. Whether you're into anime, fantasy, books, or cuisines- there's a community for you to join at YOUnity! 
 Join us and post, comment, and interact with peers within communities that reflect your interests.
 
-Features:
+## Features:
 
 1. You are able to log in with Google Authorization
 2. Once in the YOUnity home, you will be greeted with a welcome message and with a view of posts for the communities.
@@ -23,7 +23,7 @@ Features:
 9. If you click on the YOUnity's logo located on the top left corner of the window, it will take back to the welcome page. 
 10. If you have authored a comment or post, you have the option to delete it with the delete button.
 
-YOUnity Website Screenshots:
+## YOUnity Website Screenshots:
 
 ![Screenshot 2023-04-28 at 11 35 55 AM](https://user-images.githubusercontent.com/128169706/235193103-d72accb0-71e5-4939-b3c9-648efad465e4.png)
 ![Screenshot 2023-04-28 at 11 36 36 AM](https://user-images.githubusercontent.com/128169706/235193308-70c27fbb-398c-4a9c-b5a1-a950c4ef6b5e.png)
@@ -33,30 +33,30 @@ YOUnity Website Screenshots:
 ![Screenshot 2023-04-28 at 11 37 08 AM](https://user-images.githubusercontent.com/128169706/235193502-fa6dd8a2-a20d-4cbe-9a1b-4edda51780ac.png)
 ![Screenshot 2023-04-28 at 11 37 21 AM](https://user-images.githubusercontent.com/128169706/235193599-4f65298f-d821-4629-844b-b65d48c3cc1d.png)
 
-Technologies/Languages used:
+## Technologies/Languages used:
 
-1.MongoDB 
-2.Mongoose
-3.Express
-4.Node.js (it's not a language. it's a RUNTIME!)
-5.JavaScript
-6.CSS
-7.EJS
-8.Herokuapp
-9.VScode
-10.Git
-11.GitHub
+- MongoDB 
+- Mongoose
+- Express
+- Node.js (it's not a language. it's a RUNTIME!)
+- JavaScript
+- CSS
+- EJS
+- Herokuapp
+- VScode
+- Git
+- GitHub
 
-IceBox:
+### IceBox:
 
-1. A "likes" button
+1. A "like" button
 
-WIREFRAME:
+## WIREFRAME:
 
 ![Screenshot 2023-04-28 at 1 06 38 PM](https://user-images.githubusercontent.com/128169706/235210771-639ddaec-0bf6-4f6a-b7a7-911466751f36.png)
 
 
-ERD:
+## ERD:
 
 ![Screenshot 2023-04-28 at 1 05 19 PM](https://user-images.githubusercontent.com/128169706/235210855-8cd6c898-d9e8-43e9-999a-379406f0a598.png)
 

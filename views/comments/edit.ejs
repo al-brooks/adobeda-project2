@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <h3>Join the Conversation:</h3>
+    <form class="add-comment" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
+      <input type="hidden" name="name" value="<%= post.community %>">
+      <textarea name="content" id="" cols="30" rows="10" placeholder="What do you think..."></textarea>
+      <button>Add</button>
+    </form>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+
+</html>

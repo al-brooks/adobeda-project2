@@ -30,6 +30,12 @@ YOUnity Website Screenshots:
 ![Screenshot 2023-04-28 at 11 37 08 AM](https://user-images.githubusercontent.com/128169706/235193502-fa6dd8a2-a20d-4cbe-9a1b-4edda51780ac.png)
 ![Screenshot 2023-04-28 at 11 37 21 AM](https://user-images.githubusercontent.com/128169706/235193599-4f65298f-d821-4629-844b-b65d48c3cc1d.png)
 
+Technologies/Languages used:
+
+MongoDB / Mongoose
+Express
+Node.js
+HTML
 
 
 

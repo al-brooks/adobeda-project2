@@ -21,7 +21,7 @@
         </section>
         <section class="post-body">
           <p class="community-name">c/<%= p.community %></p>
-          <p>posted by <%= user.name %> on <%= p.createdAt.toLocaleDateString() %></p>
+          <p>posted by <%= p.users[0].name %> on <%= p.createdAt.toLocaleDateString() %></p>
           <p class="post-subject"><%= p.subject %></p>
           <p class="post-content"><%= p.content %></p>
           <a href="/c/<%= p.community %>/posts/<%= p._id %>">read more...</a>

@@ -38,9 +38,14 @@ Technologies/Languages used:
 3.Node.js
 4.JavaScript
 5.EJS
-6.CSS
 7.Herokuapp
 8.VScode
+9.Git
+10.GitHub
+
+IceBox:
+
+1. A "likes" button
 
 
 

@@ -42,6 +42,7 @@ Join us and post, comment, and interact with peers within communities that refle
 - JavaScript
 - CSS
 - EJS
+- Google Auth
 - Herokuapp
 - VScode
 - Git
@@ -50,6 +51,10 @@ Join us and post, comment, and interact with peers within communities that refle
 ### IceBox:
 
 1. A "like" button
+2. Filters based on most liked, highest ranked user, etc.
+3. search feature
+4. sort feature
+
 
 ## WIREFRAME:
 

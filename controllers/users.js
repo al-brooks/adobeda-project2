@@ -18,14 +18,18 @@ async function show(req, res) {
     }
   }
 
-  for (const p of posts) {
-    if (p.comments.length) {
-      let filteredArr = [...p.comments].filter(function (c) {
-        return c.users[0].toString() === req.user.id;
-      });
-      comments.push(...filteredArr);
-    } else {
-      continue;
+  for (const c of communities) {
+    if (c.posts.length) {
+      for (const p of c.posts) {
+        if (p.comments.length) {
+          let filteredArr = [...p.comments].filter(function (c) {
+            return c.users[0].toString() === req.user.id;
+          });
+          comments.push(...filteredArr);
+        } else {
+          continue;
+        }
+      }
     }
   }
 

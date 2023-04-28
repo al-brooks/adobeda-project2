@@ -6,7 +6,6 @@
   <%- include('./partials/header') %>
   <main>
     <% if (user) { %>
-    <h2>Welcome User - We'll show you posts for all communities</h2>
     <section class="flex create-post-section">
       <a href="/user/profile">
         <img referrerpolicy="no-referrer" class="user-img" src="<%= user.avatar %>" alt="User Avatar">
@@ -23,6 +22,8 @@
           <p>10</p>
         </section>
         <section class="post-body">
+          <p>c/<%= p.community %></p>
+          <p>posted by <%= user.name %> on <%= p.createdAt.toLocaleDateString() %></p>
           <p><%= p.subject %></p>
           <!-- only show first 20 words of content -->
           <p><%= p.content %></p>

@@ -21,6 +21,11 @@ body {
   height: 100vh;
 }
 
+textarea,
+input {
+  font-family: "Nunito", sans-serif;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -74,9 +79,10 @@ footer {
   position: relative;
 }
 
-/* .dropdown > button {
-  height: 3.5rem;
-} */
+.dropdownBtn {
+  align-items: center;
+  justify-content: space-between;
+}
 
 .dropdown > button,
 .dropdown-choices button {
@@ -128,6 +134,10 @@ footer {
 .create-post {
   height: 3.5rem;
   width: 100%;
+}
+
+.post-wrapper {
+  margin-bottom: 2rem;
 }
 
 .likes {

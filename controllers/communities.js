@@ -10,7 +10,8 @@ async function index(req, res) {
       name: req.params.name
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 

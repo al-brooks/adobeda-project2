@@ -43,6 +43,7 @@ Join us and post, comment, and interact with peers within communities that refle
 - Node.js (it's not a language. it's a RUNTIME!)
 - JavaScript
 - CSS
+- HTML
 - EJS
 - Google Auth
 - Herokuapp

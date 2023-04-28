@@ -53,11 +53,12 @@ Join us and post, comment, and interact with peers within communities that refle
 
 ### IceBox:
 
+- Allow users to create new communities
 - A "like" button
 - Filters based on most liked, highest ranked user, etc.
 - search feature
 - sort feature
-- update user profile to hide posts and comments until header is clicked.
+- update user profile to hide posts and comments until header is clicked
 
 
 ## WIREFRAME:

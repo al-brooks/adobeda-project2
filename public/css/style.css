@@ -193,6 +193,35 @@ footer {
   padding-left: 1rem;
 }
 
+.community-name {
+  color: var(--fifth);
+  font-size: 1.2rem;
+}
+
+.post-subject {
+  font-size: 1.5rem;
+}
+
+.post-content {
+  margin-bottom: 0.5rem;
+}
+
+.comment-btn {
+  background-color: var(--sixth);
+  color: var(--first);
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background-color: var(--fifth);
+  color: var(--fourth);
+}
+
 #logo,
 .user-img {
   display: block;
@@ -202,6 +231,9 @@ footer {
 }
 
 #landing-logo {
+  display: block;
+  height: 3.5rem;
+  border-radius: 8px;
   margin-bottom: 0.5rem;
 }
 

@@ -18,18 +18,15 @@
       <% posts.forEach(p => { %>
       <section class="flex post-wrapper">
         <section class="flex likes">
-          <p>+</p>
-          <p>10</p>
         </section>
         <section class="post-body">
-          <p>c/<%= p.community %></p>
+          <p class="community-name">c/<%= p.community %></p>
           <p>posted by <%= user.name %> on <%= p.createdAt.toLocaleDateString() %></p>
-          <p><%= p.subject %></p>
-          <p><%= p.content %></p>
-          <br>
-          <span><a href="/c/<%= p.community %>/posts/<%= p._id %>">read more</a></span>
+          <p class="post-subject"><%= p.subject %></p>
+          <p class="post-content"><%= p.content %></p>
+          <a href="/c/<%= p.community %>/posts/<%= p._id %>">read more...</a>
           <form action="/c/<%= p.community %>/posts/<%= p._id %>">
-            <button>Comments</button>
+            <button class="comment-btn"><%= p.comments.length %> Comments</button>
           </form>
         </section>
       </section>

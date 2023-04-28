@@ -1,0 +1,316 @@
+:root {
+  --first: #fffcf2;
+  --second: #ccc5b9;
+  --third: #252422;
+  --fourth: #0d0d0c;
+  --fifth: #eb5e28;
+  --sixth: #5d5d56;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  color: var(--first);
+  background: var(--fourth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+textarea,
+input {
+  font-family: "Nunito", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--fifth);
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0.5rem 2rem;
+  border-bottom: 0.25px solid var(--sixth);
+  background-color: var(--third);
+}
+
+header > nav {
+  align-items: center;
+  justify-content: space-between;
+}
+
+header > nav > ul {
+  list-style: none;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > section {
+  width: 50%;
+  margin: 0.5rem 0;
+}
+
+footer {
+  margin: 2rem 0;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdownBtn {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown > button,
+.dropdown-choices button {
+  color: inherit;
+  background-color: var(--third);
+  border: none;
+  font-size: 1rem;
+  text-align: start;
+  cursor: pointer;
+  height: 3.3rem;
+  width: 8rem;
+  padding-left: 1rem;
+}
+
+.dropdown > button:hover {
+  border: 0.25px solid var(--first);
+}
+
+.dropdown-choices {
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+
+.dropdown:hover .dropdown-choices {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-choices button {
+  display: block;
+}
+
+.dropdown-choices button:hover {
+  border: 0.25px solid var(--first);
+}
+
+.flex {
+  display: flex;
+}
+
+.user-links {
+  align-items: center;
+}
+
+.landing,
+.post-wrapper,
+.create-post-section {
+  border: thin solid var(--sixth);
+  border-radius: 5px;
+  background-color: var(--third);
+  padding: 0.8rem 1rem;
+}
+
+.landing {
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing > img {
+  height: 55vmin;
+}
+
+.landing > h2 {
+  text-align: center;
+}
+
+.landing > a {
+  font-size: 1.5rem;
+}
+
+.landing > h3 {
+  text-decoration: underline;
+}
+
+.create-post-section {
+  align-items: center;
+}
+
+.create-post-wrapper {
+  width: 90%;
+}
+.create-post {
+  height: 3.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  background-color: var(--sixth);
+  color: var(--first);
+  border-radius: 5px;
+}
+
+.create-post::placeholder {
+  color: var(--first);
+}
+
+.post-wrapper {
+  margin-bottom: 1rem;
+}
+
+.likes {
+  flex-direction: column;
+  align-items: center;
+}
+
+.like > p {
+  text-align: center;
+  margin: 0;
+}
+
+.post-body {
+  padding-left: 1rem;
+}
+
+.community-name {
+  color: var(--fifth);
+  font-size: 1.2rem;
+}
+
+.post-subject {
+  font-size: 1.5rem;
+}
+
+.post-content {
+  margin-bottom: 0.5rem;
+}
+
+.submit-btn {
+  background-color: var(--sixth);
+  color: var(--first);
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: var(--fifth);
+  color: var(--fourth);
+}
+
+.new-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.new-form > label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.new-form-select {
+  margin-top: 0.5rem;
+  width: 8rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--sixth);
+  color: var(--first);
+}
+
+.new-form-input,
+.new-form-text {
+  margin-top: 0.5rem;
+  background-color: var(--sixth);
+  color: var(--first);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.new-form-input::placeholder,
+.new-form-text::placeholder {
+  color: var(--first);
+}
+
+.user-info {
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.post-btns {
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+
+.new-comment {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+#logo,
+.user-img {
+  display: block;
+  height: 3.5rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+#landing-logo {
+  display: block;
+  height: 3.5rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+#site-links {
+  align-items: flex-end;
+}
+
+@media (min-width: 600px) {
+  .dropdown > button,
+  .dropdown-choices button {
+    font-size: 1.3rem;
+    width: 15rem;
+  }
+}

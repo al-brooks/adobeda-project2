@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head') %>
+<%- include('../partials/head') %>
 
 <body>
-  <%- include('./partials/header') %>
+  <%- include('../partials/header') %>
   <main>
-    <% if (user) { %>
+    <h2>c/<%= name %></h2>
     <section class="flex create-post-section">
       <a href="/user/profile">
         <img referrerpolicy="no-referrer" class="user-img" src="<%= user.avatar %>" alt="User Avatar">
@@ -32,17 +32,8 @@
       </section>
       <% }) %>
     </section>
-    <% } else { %>
-    <section class="flex landing">
-      <img src="/imgs/younity_full_logo.png" alt="">
-      <h2>YOUnity is where the conversation happens. Whether you're into anime, fantasy, books, or cuisines - there's a community for you to join at YOUnity! Join us and post, comment, and interact with peers within communities that reflect your interests.
-      </h2>
-      <h3>Log In Below to Get Started:</h3>
-      <a href="/auth/google">LOG IN</a>
-    </section>
-    <% } %>
   </main>
-  <%- include('./partials/footer') %>
+  <%- include('../partials/footer') %>
 
 </body>
 

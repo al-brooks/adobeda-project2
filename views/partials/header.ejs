@@ -1,0 +1,41 @@
+<header>
+  <nav class="flex">
+    <% if (user) { %>
+    <section id="site-links" class="flex">
+      <a href="/">
+        <img src="/imgs/younity_logo.png" alt="YOUnity Logo" id="logo">
+      </a>
+      <section class="dropdown">
+        <button class="flex dropdownBtn">
+          <span>Communities</span> <span>&or;</span></button>
+        <section class="dropdown-choices">
+          <form action="/c/anime">
+            <button>Anime</button>
+          </form>
+          <form action="/c/books">
+            <button>Books</button>
+          </form>
+          <form action="/c/food">
+            <button>Food</button>
+          </form>
+        </section>
+      </section>
+    </section>
+
+    <section class="flex user-links">
+      <a href="/user/profile">
+        <img referrerpolicy="no-referrer" class="user-img" src="<%= user.avatar %>" alt="User Avatar">
+      </a>
+      <a href="/logout">LOG OUT</a>
+    </section>
+    <% } else { %>
+    <section class="user-links" class="flex">
+      <a href="/">
+        <img src="/imgs/younity_logo.png" alt="YOUnity Logo" id="landing-logo">
+      </a>
+      <a href="/auth/google">LOG IN</a>
+    </section>
+
+    <% } %>
+  </nav>
+</header>

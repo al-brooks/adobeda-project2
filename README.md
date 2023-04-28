@@ -53,10 +53,11 @@ Join us and post, comment, and interact with peers within communities that refle
 
 ### IceBox:
 
-1. A "like" button
-2. Filters based on most liked, highest ranked user, etc.
-3. search feature
-4. sort feature
+- A "like" button
+- Filters based on most liked, highest ranked user, etc.
+- search feature
+- sort feature
+- update user profile to hide posts and comments until header is clicked.
 
 
 ## WIREFRAME:

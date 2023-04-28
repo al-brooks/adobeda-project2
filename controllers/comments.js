@@ -20,7 +20,8 @@ async function createComment(req, res) {
     await community.save();
     res.redirect(`/c/${req.body.name}/posts/${req.params.id}`);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 
@@ -41,7 +42,8 @@ async function deleteComment(req, res) {
     await community.save();
     res.redirect(`/c/${req.params.name}/posts/${req.params.pid}`);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 
@@ -57,7 +59,8 @@ async function editComment(req, res) {
 
     res.render("comments/edit", { title: "Edit Post", post, comment });
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 
@@ -76,7 +79,8 @@ async function updateComment(req, res) {
     await community.save();
     res.redirect(`/c/${req.body.name}/posts/${req.params.pid}`);
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    res.render("error", { title: "Something Went Wrong!" });
   }
 }
 

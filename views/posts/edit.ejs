@@ -6,23 +6,20 @@
   <%- include('../partials/header') %>
   <main>
     <h2>Edit Post</h2>
-    <form action="/c/<%= post.community %>/posts/<%= post._id %>?_method=PUT" method="POST">
+    <form class="new-form" action="/c/<%= post.community %>/posts/<%= post._id %>?_method=PUT" method="POST">
       <label>Community:
-        <select name="community">
+        <select class="new-form-select" name="community">
           <option value="<%= post.community %>" selected>
             <%= post.community %></option>
         </select>
       </label>
-      <label>Rules:
-        <p>Community Rules + Guidelines</p>
-      </label>
       <label>Subject:
-        <input name="subject" type="text" placeholder="<%= post.subject %>">
-      </label><br>
+        <input class="new-form-input" name="subject" type="text" placeholder="<%= post.subject %>">
+      </label>
       <label>Content:
-        <textarea name="content" id="" cols="30" rows="10" placeholder="<%= post.content %>"></textarea>
-      </label><br>
-      <button>Submit Changes</button>
+        <textarea class="new-form-text" name="content" id="" cols="30" rows="10" placeholder="<%= post.content %>"></textarea>
+      </label>
+      <button class="submit-btn">Submit Changes</button>
     </form>
   </main>
   <%- include('../partials/footer') %>

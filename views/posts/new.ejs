@@ -10,7 +10,7 @@
     <form class="new-form" action="<%= action %>" method="POST">
       <label>Community:
         <% if (name) { %>
-        <select name="community">
+        <select class="new-form-select" name="community">
           <option value="<%= name %>" selected><%= name %></option>
         </select>
         <% } else { %>
@@ -25,7 +25,7 @@
         <input class="new-form-input" name="subject" type="text" placeholder="Subject / Title">
       </label>
       <label>Content:
-        <textarea placeholder="What would you like to say..." class="new-form-text" name="content" id="" cols="30" rows="10"></textarea>
+        <textarea placeholder="What would you like to say..." class="new-form-text" name="content" cols="30" rows="10"></textarea>
       </label>
       <button class="submit-btn">Create Post</button>
     </form>

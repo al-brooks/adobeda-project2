@@ -1,7 +1,6 @@
 YOUnity - Join your community!
 
-Project Link: [
-](https://younity.herokuapp.com/)
+Project Link: [https://younity.herokuapp.com/)
 
 About YOUnity:
 

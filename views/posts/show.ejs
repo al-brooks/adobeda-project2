@@ -37,7 +37,7 @@
         </form>
       </section>
       <h3>Comments: <%= post.comments.length %></h3>
-      <% if (comments.length > 0) { %>
+      <% if (comments.length) { %>
       <% comments.forEach(c => { %>
       <section class="post-wrapper">
         <section class="comment">
@@ -59,10 +59,12 @@
           </form>
         </section>
         <% } %>
-        <% }) %>
-        <% } %>
-
       </section>
+
+      <% }) %>
+
+      <% } %>
+
     </section>
   </main>
   <%- include('../partials/footer') %>

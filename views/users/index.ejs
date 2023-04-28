@@ -6,26 +6,28 @@
 <body>
   <%- include('../partials/header') %>
   <main>
-    <section>
-      <img referrerpolicy="no-referrer" src="<%= user.avatar %>" alt="">
-      <p><%= user.name %></p>
-      <p><%= user.email %></p>
+    <section class="flex user-info">
+      <img referrerpolicy="no-referrer" class="user-img" src="<%= user.avatar %>" alt="user avatar">
+      <p class="user-name"><%= user.name %></p>
     </section>
     <section>
       <h2>POSTS</h2>
       <% if (posts.length) { %>
       <% posts.forEach(p => { %>
-      <div>
-        <p><%= p.subject %></p>
-        <p><%= p.content %></p>
-        <a href="/c/<%= p.community %>/posts/<%= p._id %>">see post details...</a>
-        <form action="/c/<%= p.community %>/posts/<%= p._id %>/edit">
-          <button>edit</button>
-        </form>
-        <form action="/c/<%= p.community %>/posts/<%= p._id %>?_method=DELETE" method="POST">
-          <button>delete</button>
-        </form>
-      </div>
+      <section class="flex post-wrapper">
+        <section class="flex likes">
+        </section>
+        <section class="post-body">
+          <p class="community-name">c/<%= p.community %></p>
+          <p>posted by <%= user.name %> on <%= p.createdAt.toLocaleDateString() %></p>
+          <p class="post-subject"><%= p.subject %></p>
+          <p class="post-content"><%= p.content %></p>
+          <a href="/c/<%= p.community %>/posts/<%= p._id %>">read more...</a>
+          <form action="/c/<%= p.community %>/posts/<%= p._id %>">
+            <button class="submit-btn"><%= p.comments.length %> Comments</button>
+          </form>
+        </section>
+      </section>
       <% }) %>
       <% } else { %>
       <p>No Posts Yet!</p>
@@ -35,16 +37,26 @@
       <h2>COMMENTS</h2>
       <% if (comments.length) { %>
       <% comments.forEach(c => { %>
-      <div>
-        <p><%= c.content %></p>
-        <a href="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>">see post details...</a>
-        <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>/edit">
-          <button>edit</button>
-        </form>
-        <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
-          <button>delete</button>
-        </form>
-      </div>
+      <section class="post-wrapper">
+        <section class="comment">
+          <section class="flex user-info">
+            <img referrerpolicy="no-referrer" class="user-img" src="<%= user.avatar %>" alt="">
+            <p class="user-name"><%= user.name %></p>
+          </section>
+          <section>
+            <p class="post-content"><%= c.content %></p>
+            <a href="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>">original post...</a>
+          </section>
+        </section>
+        <section class="post-btns flex">
+          <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>/edit">
+            <button class="submit-btn">edit</button>
+          </form>
+          <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
+            <button class="submit-btn">delete</button>
+          </form>
+        </section>
+      </section>
       <% }) %>
       <% } else { %>
       <p>No Comments Yet!</p>

@@ -32,10 +32,14 @@ YOUnity Website Screenshots:
 
 Technologies/Languages used:
 
-MongoDB / Mongoose
-Express
-Node.js
-HTML
+1.MongoDB 
+2.Mongoose
+2.Express
+3.Node.js
+4.JavaScript
+5.EJS
+6.CSS
+7.Herokuapp
 
 
 

@@ -67,12 +67,8 @@ main {
 }
 
 main > section {
-  border: thin solid var(--sixth);
-  border-radius: 5px;
   width: 50%;
   margin: 0.5rem 0;
-  padding: 0.8rem 1rem;
-  background-color: var(--third);
 }
 
 footer {
@@ -133,6 +129,15 @@ footer {
   align-items: center;
 }
 
+.landing,
+.post-wrapper,
+.create-post-section {
+  border: thin solid var(--sixth);
+  border-radius: 5px;
+  background-color: var(--third);
+  padding: 0.8rem 1rem;
+}
+
 .landing {
   flex-direction: column;
   align-items: center;
@@ -176,7 +181,7 @@ footer {
 }
 
 .post-wrapper {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .likes {

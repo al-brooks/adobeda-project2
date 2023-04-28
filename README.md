@@ -37,18 +37,28 @@ Technologies/Languages used:
 
 1.MongoDB 
 2.Mongoose
-2.Express
-3.Node.js
-4.JavaScript
-5.EJS
-7.Herokuapp
-8.VScode
-9.Git
-10.GitHub
+3.Express
+4.Node.js (it's not a language. it's a RUNTIME!)
+5.JavaScript
+6.CSS
+7.EJS
+8.Herokuapp
+9.VScode
+10.Git
+11.GitHub
 
 IceBox:
 
 1. A "likes" button
+
+WIREFRAME:
+
+![Screenshot 2023-04-28 at 1 06 38 PM](https://user-images.githubusercontent.com/128169706/235210771-639ddaec-0bf6-4f6a-b7a7-911466751f36.png)
+
+
+ERD:
+
+![Screenshot 2023-04-28 at 1 05 19 PM](https://user-images.githubusercontent.com/128169706/235210855-8cd6c898-d9e8-43e9-999a-379406f0a598.png)
 
 
 

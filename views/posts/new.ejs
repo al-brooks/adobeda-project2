@@ -7,30 +7,27 @@
   <main>
     <h2>Create a Post</h2>
     <% let action = name ? `/c/${name}/posts` : '/posts' %>
-    <form action="<%= action %>" method="POST">
+    <form class="new-form" action="<%= action %>" method="POST">
       <label>Community:
         <% if (name) { %>
         <select name="community">
           <option value="<%= name %>" selected><%= name %></option>
         </select>
         <% } else { %>
-        <select name="community">
+        <select class="new-form-select" name="community">
           <option value="anime">Anime</option>
           <option value="books">Books</option>
           <option value="food">Food</option>
         </select>
         <% } %>
       </label>
-      <label>Rules:
-        <p>Community Rules + Guidelines</p>
-      </label>
       <label>Subject:
-        <input name="subject" type="text" placeholder="Subject / Title">
-      </label><br>
+        <input class="new-form-input" name="subject" type="text" placeholder="Subject / Title">
+      </label>
       <label>Content:
-        <textarea name="content" id="" cols="30" rows="10"></textarea>
-      </label><br>
-      <button>Create Post</button>
+        <textarea placeholder="What would you like to say..." class="new-form-text" name="content" id="" cols="30" rows="10"></textarea>
+      </label>
+      <button class="submit-btn">Create Post</button>
     </form>
   </main>
   <%- include('../partials/footer') %>

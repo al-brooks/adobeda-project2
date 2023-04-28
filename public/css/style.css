@@ -72,7 +72,7 @@ main > section {
 }
 
 footer {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 
 .dropdown {
@@ -211,7 +211,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-.comment-btn {
+.submit-btn {
   background-color: var(--sixth);
   color: var(--first);
   border: none;
@@ -222,9 +222,48 @@ footer {
   cursor: pointer;
 }
 
-.comment-btn:hover {
+.submit-btn:hover {
   background-color: var(--fifth);
   color: var(--fourth);
+}
+
+.new-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.new-form > label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.new-form-select {
+  margin-top: 0.5rem;
+  width: 8rem;
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--sixth);
+  color: var(--first);
+}
+
+.new-form-input,
+.new-form-text {
+  margin-top: 0.5rem;
+  background-color: var(--sixth);
+  color: var(--first);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.new-form-input::placeholder,
+.new-form-text::placeholder {
+  color: var(--first);
 }
 
 #logo,

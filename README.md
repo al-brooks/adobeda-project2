@@ -19,3 +19,19 @@ Features:
 8. If you click on your profile picture on the top right corner of the window, it will take a you to a page showing your profile, with information such as name, email, your posts, and comments.
 9. If you click on the YOUnity's logo located on the top left corner of the window, it will take back to the welcome page. 
 10. If you have authored a comment or post, you have the option to delete it with the delete button.
+
+YOUnity Website Screenshots:
+
+![Screenshot 2023-04-28 at 11 35 55 AM](https://user-images.githubusercontent.com/128169706/235193103-d72accb0-71e5-4939-b3c9-648efad465e4.png)
+![Screenshot 2023-04-28 at 11 36 36 AM](https://user-images.githubusercontent.com/128169706/235193308-70c27fbb-398c-4a9c-b5a1-a950c4ef6b5e.png)
+![Screenshot 2023-04-28 at 11 38 35 AM](https://user-images.githubusercontent.com/128169706/235193366-4c4d9c2d-1aa0-4fcd-a769-81d4c6a09212.png)
+![Screenshot 2023-04-28 at 11 37 43 AM](https://user-images.githubusercontent.com/128169706/235193421-5c4417e2-1c05-4e8f-be04-aee627bba301.png)
+![Screenshot 2023-04-28 at 11 38 00 AM](https://user-images.githubusercontent.com/128169706/235193462-9e3cc354-3095-41fa-84fb-6f2e51e3fbb5.png)
+![Screenshot 2023-04-28 at 11 37 08 AM](https://user-images.githubusercontent.com/128169706/235193502-fa6dd8a2-a20d-4cbe-9a1b-4edda51780ac.png)
+![Screenshot 2023-04-28 at 11 37 21 AM](https://user-images.githubusercontent.com/128169706/235193599-4f65298f-d821-4629-844b-b65d48c3cc1d.png)
+
+
+
+
+
+

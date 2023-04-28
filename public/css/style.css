@@ -266,6 +266,16 @@ footer {
   color: var(--first);
 }
 
+.user-info {
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.post-btns {
+  padding-left: 1rem;
+  justify-content: space-between;
+}
+
 #logo,
 .user-img {
   display: block;

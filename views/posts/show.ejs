@@ -5,27 +5,29 @@
 <body>
   <%- include('../partials/header') %>
   <main>
-    <section class="detail-wrapper">
-      <div class="user-info">
-        <img referrerpolicy="no-referrer" class="user-avatar" src="<%= post.users[0].avatar %>" alt="user avatar">
+    <section class="post-wrapper">
+      <div class="flex user-info">
+        <img referrerpolicy="no-referrer" class="user-img" src="<%= post.users[0].avatar %>" alt="user avatar">
         <p class="user-name"><%= post.users[0].name %></p>
       </div>
-      <p class="community">/c/<%= post.community %></p>
-      <div class="post-wrapper">
-        <section class="likes">10</section>
+      <section class="post-wrapper">
+        <section class="likes"></section>
         <section class="post-body">
-          <p class="subject"><%= post.subject %></p>
-          <p class="content"><%= post.content %></p>
+          <p class="community-name">/c/<%= post.community %></p>
+          <p class="post-subject"><%= post.subject %></p>
+          <p class="post-content"><%= post.content %></p>
         </section>
         <% if (user.id === post.users[0].id) { %>
-        <form action="/c/<%= post.community %>/posts/<%= post._id %>/edit">
-          <button>edit</button>
-        </form>
-        <form action="/c/<%= post.community %>/posts/<%= post._id %>?_method=DELETE" method="POST">
-          <button>delete</button>
-        </form>
+        <section class="post-btns flex">
+          <form action="/c/<%= post.community %>/posts/<%= post._id %>/edit">
+            <button class="submit-btn">edit</button>
+          </form>
+          <form action="/c/<%= post.community %>/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <button class="submit-btn">delete</button>
+          </form>
+        </section>
         <% } %>
-      </div>
+      </section>
       <h3>Join the Conversation:</h3>
       <form class="add-comment" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
         <input type="hidden" name="name" value="<%= post.community %>">

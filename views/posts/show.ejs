@@ -6,10 +6,10 @@
   <%- include('../partials/header') %>
   <main>
     <section class="post-wrapper">
-      <div class="flex user-info">
+      <section class="flex user-info">
         <img referrerpolicy="no-referrer" class="user-img" src="<%= post.users[0].avatar %>" alt="user avatar">
         <p class="user-name"><%= post.users[0].name %></p>
-      </div>
+      </section>
       <section class="post-wrapper">
         <section class="likes"></section>
         <section class="post-body">
@@ -36,23 +36,29 @@
           <button class="submit-btn">Create Comment</button>
         </form>
       </section>
-      <section class="comment-list">
-        <!-- List all comments - Make Divs (pic + username) - content - likes -->
-        <% if (comments.length > 0) { %>
-        <% comments.forEach(c => { %>
-        <div>
-          <img src="<%= c.users[0].avatar %>" alt="">
-          <p><%= c.users[0].name %></p>
-          <p><%= c.content %></p>
-          <% if (user.id === c.users[0].id) { %>
+      <h3>Comments: <%= post.comments.length %></h3>
+      <% if (comments.length > 0) { %>
+      <% comments.forEach(c => { %>
+      <section class="post-wrapper">
+        <section class="comment">
+          <section class="flex user-info">
+            <img referrerpolicy="no-referrer" class="user-img" src="<%= c.users[0].avatar %>" alt="">
+            <p class="user-name"><%= c.users[0].name %></p>
+          </section>
+          <section>
+            <p class="post-content"><%= c.content %></p>
+          </section>
+        </section>
+        <% if (user.id === c.users[0].id) { %>
+        <section class="post-btns flex">
           <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>/edit">
-            <button>edit</button>
+            <button class="submit-btn">edit</button>
           </form>
           <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
-            <button>delete</button>
+            <button class="submit-btn">delete</button>
           </form>
-          <% } %>
-        </div>
+        </section>
+        <% } %>
         <% }) %>
         <% } %>
 

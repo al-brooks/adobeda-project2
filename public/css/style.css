@@ -276,6 +276,12 @@ footer {
   justify-content: space-between;
 }
 
+.new-comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #logo,
 .user-img {
   display: block;

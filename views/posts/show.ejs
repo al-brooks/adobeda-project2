@@ -28,12 +28,14 @@
         </section>
         <% } %>
       </section>
-      <h3>Join the Conversation:</h3>
-      <form class="add-comment" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
-        <input type="hidden" name="name" value="<%= post.community %>">
-        <textarea name="content" id="" cols="30" rows="10" placeholder="What do you think..."></textarea>
-        <button>Add</button>
-      </form>
+      <section class="new-comment">
+        <h3>Join the Conversation:</h3>
+        <form class="new-form" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
+          <input type="hidden" name="name" value="<%= post.community %>">
+          <textarea class="new-form-text" name="content" cols="30" rows="10" placeholder="What do you think..."></textarea>
+          <button class="submit-btn">Create Comment</button>
+        </form>
+      </section>
       <section class="comment-list">
         <!-- List all comments - Make Divs (pic + username) - content - likes -->
         <% if (comments.length > 0) { %>

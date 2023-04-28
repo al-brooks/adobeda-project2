@@ -36,7 +36,9 @@
       <% comments.forEach(c => { %>
       <div>
         <p><%= c.content %></p>
-        <button>edit</button>
+        <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>/edit">
+          <button>edit</button>
+        </form>
         <form action="/c/<%= c.community %>/posts/<%= c.posts[0]._id %>/comments/<%= c._id %>?_method=DELETE" method="POST">
           <button>delete</button>
         </form>

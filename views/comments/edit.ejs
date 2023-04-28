@@ -5,11 +5,11 @@
 <body>
   <%- include('../partials/header') %>
   <main>
-    <h3>Join the Conversation:</h3>
-    <form class="add-comment" action="/c/<%= post.community %>/posts/<%= post._id %>/comments" method="POST">
-      <input type="hidden" name="name" value="<%= post.community %>">
-      <textarea name="content" id="" cols="30" rows="10" placeholder="What do you think..."></textarea>
-      <button>Add</button>
+    <h3>Edit Comment:</h3>
+    <form class="add-comment" action="/c/<%= comment.community %>/posts/<%= post._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+      <input type="hidden" name="name" value="<%= comment.community %>">
+      <textarea name="content" id="" cols="30" rows="10" placeholder="<%= comment.content %>"></textarea>
+      <button>Submit Changes</button>
     </form>
   </main>
   <%- include('../partials/footer') %>

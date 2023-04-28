@@ -45,7 +45,44 @@ async function deleteComment(req, res) {
   }
 }
 
+async function editComment(req, res) {
+  try {
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.pid;
+    });
+    const comment = post.comments.find(function (c) {
+      return c._id.toString() === req.params.cid;
+    });
+
+    res.render("comments/edit", { title: "Edit Post", post, comment });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function updateComment(req, res) {
+  try {
+    const community = await Community.findOne({ community: req.params.name });
+    const post = community.posts.find(function (post) {
+      return post._id.toString() === req.params.pid;
+    });
+    const comment = post.comments.find(function (c) {
+      return c._id.toString() === req.params.cid;
+    });
+
+    comment.content = req.body.content;
+
+    await community.save();
+    res.redirect(`/user/profile`);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 module.exports = {
   create: createComment,
-  delete: deleteComment
+  delete: deleteComment,
+  edit: editComment,
+  update: updateComment
 };

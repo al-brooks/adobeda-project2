@@ -25,7 +25,6 @@
           <p>c/<%= p.community %></p>
           <p>posted by <%= user.name %> on <%= p.createdAt.toLocaleDateString() %></p>
           <p><%= p.subject %></p>
-          <!-- only show first 20 words of content -->
           <p><%= p.content %></p>
           <br>
           <span><a href="/c/<%= p.community %>/posts/<%= p._id %>">read more</a></span>
@@ -37,9 +36,13 @@
       <% }) %>
     </section>
     <% } else { %>
-    <h2>Hey, thanks for coming. If you want to view our site click on the log in button</h2>
-    <a href="/auth/google">LOG IN</a>
-
+    <section class="flex landing">
+      <img src="/imgs/younity_full_logo.png" alt="">
+      <h2>YOUnity is where the conversation happens. Whether you're into anime, fantasy, books, or cuisines - there's a community for you to join at YOUnity! Join us and post, comment, and interact with peers within communities that reflect your interests.
+      </h2>
+      <h3>Log In Below to Get Started:</h3>
+      <a href="/auth/google">LOG IN</a>
+    </section>
     <% } %>
   </main>
   <%- include('./partials/footer') %>

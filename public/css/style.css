@@ -31,6 +31,10 @@ a {
   color: inherit;
 }
 
+a:hover {
+  color: var(--fifth);
+}
+
 p {
   margin: 0;
 }
@@ -128,6 +132,27 @@ footer {
   align-items: center;
 }
 
+.landing {
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing > img {
+  height: 55vmin;
+}
+
+.landing > h2 {
+  text-align: center;
+}
+
+.landing > a {
+  font-size: 1.5rem;
+}
+
+.landing > h3 {
+  text-decoration: underline;
+}
+
 .create-post-wrapper {
   width: 90%;
 }
@@ -160,6 +185,11 @@ footer {
   height: 3.5rem;
   border-radius: 8px;
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#landing-logo {
+  margin-bottom: 0.5rem;
 }
 
 #site-links {

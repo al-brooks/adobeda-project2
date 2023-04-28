@@ -61,12 +61,12 @@ Join us and post, comment, and interact with peers within communities that refle
 - update user profile to hide posts and comments until header is clicked
 
 
-## WIREFRAME:
+## Original Wireframe:
 
 ![Screenshot 2023-04-28 at 1 06 38 PM](https://user-images.githubusercontent.com/128169706/235210771-639ddaec-0bf6-4f6a-b7a7-911466751f36.png)
 
 
-## ERD:
+## Original ERD:
 
 ![Screenshot 2023-04-28 at 1 05 19 PM](https://user-images.githubusercontent.com/128169706/235210855-8cd6c898-d9e8-43e9-999a-379406f0a598.png)
 

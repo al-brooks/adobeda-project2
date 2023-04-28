@@ -106,7 +106,7 @@ async function updatePost(req, res) {
     post.content = content;
 
     await community.save();
-    res.redirect(`/user/profile`);
+    res.redirect(`/c/${req.params.name}/posts/${req.params.id}`);
   } catch (err) {
     console.log(err);
   }

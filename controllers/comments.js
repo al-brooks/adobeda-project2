@@ -74,7 +74,7 @@ async function updateComment(req, res) {
     comment.content = req.body.content;
 
     await community.save();
-    res.redirect(`/user/profile`);
+    res.redirect(`/c/${req.body.name}/posts/${req.params.pid}`);
   } catch (err) {
     console.log(err);
   }

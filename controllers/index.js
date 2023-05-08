@@ -21,7 +21,7 @@ async function home(req, res) {
       posts.push(...c.posts);
     });
     res.render("index", {
-      title: "Forum Site Homepage",
+      title: "YOUnity",
       posts,
       user: req.user
     });
